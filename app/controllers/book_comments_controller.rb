@@ -8,13 +8,16 @@ class BookCommentsController < ApplicationController
       book_id: params[:book_id]
     )
     @comment.save
-    redirect_to request.referrer
+    @comments = BookComment.where(book_id: @comment.book.id).order(:id)
+    # redirect_to request.referrer
   end
 
   def destroy
     @comment = BookComment.find(params[:book_comment_id])
+    @book = @comment.book
     @comment.destroy
-    redirect_to request.referrer
+    @comments = BookComment.where(book_id: @book.id).order(:id)
+    # redirect_to request.referrer
   end
 
   private

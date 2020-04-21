@@ -11,7 +11,7 @@
       <td><%= comment.comment %></td>
       <% if comment.user == current_user%>
         <td>
-          <%= link_to "/book_comments/#{comment.id}/destroy", method: :post, "data-confirm" => "本当に消しますか？" do %>
+          <%= link_to "/book_comments/#{comment.id}/destroy", method: :post, "data-confirm" => "本当に消しますか？", remote: true do %>
             <button type="button" class="btn btn-danger btn-block" aria-label="Left Align">Destroy</button>
           <% end %>
         </td>

@@ -10,24 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
-
-$(document).ready(function() {
-	$("#theTarget").skippr({
-		transition: 'slide',
-		speed : 1000,
-		easing : 'easeOutQuart',
-		navType : 'block',
-		childrenElementType : 'div',
-		arrows : true,
-		autoPlay : true,
-		autoPlayDuration : 3000,
-		keyboardOnAlways : true,
-		hidePrevious : false
-	});
-});
